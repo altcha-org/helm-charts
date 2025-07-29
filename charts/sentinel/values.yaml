@@ -116,6 +116,39 @@ persistence:
   storageClassName: ""  # Set to your StorageClass or leave empty for default
   mountPath: /data  # Where to mount in the container
 
+# Environment variables to set in the container
+# Example:
+# env:
+#   - name: LOG_LEVEL
+#     value: "debug"
+#   - name: SMTP_URL
+#     value: "your-smtp-url"
+env: []
+
+# Environment variables from ConfigMaps or Secrets
+# Example:
+# envFrom:
+#   - configMapRef:
+#       name: my-app-config
+#   - secretRef:
+#       name: my-app-secrets
+envFrom: []
+
+# Extra environment variables with more complex definitions
+# Example:
+# extraEnvVars:
+#   - name: REDIS_URL
+#     valueFrom:
+#       secretKeyRef:
+#         name: redis-secret
+#         key: connection-string
+#   - name: CONFIG_VALUE
+#     valueFrom:
+#       configMapKeyRef:
+#         name: app-config
+#         key: config-value
+extraEnvVars: []
+
 nodeSelector: {}
 
 tolerations: []

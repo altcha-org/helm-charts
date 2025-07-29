@@ -20,3 +20,16 @@
   echo "Visit http://127.0.0.1:8080 to use your application"
   kubectl --namespace {{ .Release.Namespace }} port-forward $POD_NAME 8080:$CONTAINER_PORT
 {{- end }}
+{{- if or .Values.env .Values.envFrom .Values.extraEnvVars }}
+
+2. Environment variables have been configured:
+{{- if .Values.env }}
+   - Direct environment variables: {{ len .Values.env }} configured
+{{- end }}
+{{- if .Values.envFrom }}
+   - Environment from ConfigMaps/Secrets: {{ len .Values.envFrom }} sources configured
+{{- end }}
+{{- if .Values.extraEnvVars }}
+   - Complex environment variables: {{ len .Values.extraEnvVars }} configured
+{{- end }}
+{{- end }}

@@ -42,6 +42,9 @@ The following table lists the configurable parameters of the ALTCHA Sentinel cha
 | `persistence.size` | PVC size | `10Gi` |
 | `persistence.storageClass` | PVC storage class | `""` (uses default) |
 | `persistence.mountPath` | Mount path for volume | `/data` |
+| `env` | Direct environment variables | `[]` |
+| `envFrom` | Load environment from ConfigMaps/Secrets | `[]` |
+| `extraEnvVars` | Extra environment variables with complex definitions | `[]` |
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example:
 
@@ -52,6 +55,89 @@ helm install altcha-sentinel \
 ```
 
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example:
+
+```bash
+helm install altcha-sentinel -f values.yaml altcha-org/sentinel
+```
+
+## Environment Variables
+
+The chart supports three ways to configure environment variables:
+
+### Direct Environment Variables
+
+Use the `env` parameter to set simple environment variables:
+
+```yaml
+env:
+  - name: LOG_LEVEL
+    value: "debug"
+  - name: SMTP_URL
+    value: "your-smtp-url"
+```
+
+### Environment Variables from ConfigMaps or Secrets
+
+Use the `envFrom` parameter to load entire ConfigMaps or Secrets as environment variables:
+
+```yaml
+envFrom:
+  - configMapRef:
+      name: my-app-config
+  - secretRef:
+      name: my-app-secrets
+```
+
+### Complex Environment Variables
+
+Use the `extraEnvVars` parameter for environment variables that reference specific keys from ConfigMaps or Secrets:
+
+```yaml
+extraEnvVars:
+  - name: REDIS_URL
+    valueFrom:
+      secretKeyRef:
+        name: redis-secret
+        key: connection-string
+  - name: CONFIG_VALUE
+    valueFrom:
+      configMapKeyRef:
+        name: app-config
+        key: config-value
+```
+
+### Complete Example
+
+Here's a complete example using all three methods:
+
+```yaml
+# values.yaml
+env:
+  - name: LOG_LEVEL
+    value: "info"
+  - name: PASSWORD_LOGIN_ENABLED
+    value: "0"
+
+envFrom:
+  - configMapRef:
+      name: sentinel-config
+  - secretRef:
+      name: sentinel-secrets
+
+extraEnvVars:
+  - name: SMTP_URL
+    valueFrom:
+      secretKeyRef:
+        name: credentials
+        key: smtp-url
+  - name: BASE_URL
+    valueFrom:
+      configMapKeyRef:
+        name: feature-config
+        key: base-url
+```
+
+Then install with:
 
 ```bash
 helm install altcha-sentinel -f values.yaml altcha-org/sentinel

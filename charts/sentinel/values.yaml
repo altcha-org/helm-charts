@@ -108,6 +108,13 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
+# This section is for configuring pod distribution budget, more information here: https://kubernetes.io/docs/concepts/workloads/pods/disruptions/
+podDisruptionBudget:
+  enabled: false
+  minAvailable: 1
+  # maxUnavailable: 1
+  # matchLabels: {} # Optional custom label selector
+
 # Persistent storage
 persistence:
   enabled: true

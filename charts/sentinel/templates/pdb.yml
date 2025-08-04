@@ -1,0 +1,22 @@
+{{- if and .Values.podDisruptionBudget.enabled (or (ge (int .Values.replicaCount) 2) (and .Values.autoscaling.enabled (ge (int .Values.autoscaling.minReplicas) 2))) }}
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ include "sentinel.fullname" . }}
+  labels:
+    {{- include "sentinel.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- if .Values.podDisruptionBudget.matchLabels }}
+      {{- toYaml .Values.podDisruptionBudget.matchLabels | nindent 6 }}
+      {{- else }}
+      app.kubernetes.io/name: {{ include "sentinel.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+      {{- end }}
+  {{- if hasKey .Values.podDisruptionBudget "minAvailable" }}
+  minAvailable: {{ .Values.podDisruptionBudget.minAvailable }}
+  {{- else if hasKey .Values.podDisruptionBudget "maxUnavailable" }}
+  maxUnavailable: {{ .Values.podDisruptionBudget.maxUnavailable }}
+  {{- end }}
+{{- end }}

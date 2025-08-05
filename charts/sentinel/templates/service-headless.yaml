@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "sentinel.fullname" . }}-headless
+  labels:
+    {{- include "sentinel.labels" . | nindent 4 }}
+spec:
+  clusterIP: None
+  selector:
+    {{- include "sentinel.selectorLabels" . | nindent 4 }}
+  ports:
+    - name: http
+      port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}

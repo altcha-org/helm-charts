@@ -1,5 +1,8 @@
 # ALTCHA Sentinel Helm Chart
 
+> [!IMPORTANT]
+> **0.8.x -> 0.9.x**: As of version 0.9.x, this chart uses a StatefulSet instead of a Deployment to support per-replica persistent volumes. If you are upgrading from an older version, manually delete the existing deployment. If you need to migrate data from the previous PVC, use a migration Job or copy data manually.
+
 ## Overview
 
 This Helm chart deploys [ALTCHA Sentinel](https://altcha.org/) on a Kubernetes cluster.

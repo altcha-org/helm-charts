@@ -2,8 +2,17 @@ apiVersion: v1
 entries:
   sentinel:
   - apiVersion: v2
+    appVersion: 1.10.2
+    created: "2025-08-28T10:21:17.72835+08:00"
+    description: A Helm chart for ALTCHA Sentinel
+    digest: 731c4ef9f82fb1d42fe83cb101dd4bd9008d7a4dbf2d6577da0e1bd81bb8ba41
+    name: sentinel
+    urls:
+    - https://altcha-org.github.io/helm-charts/sentinel-0.10.2.tgz
+    version: 0.10.2
+  - apiVersion: v2
     appVersion: 1.10.1
-    created: "2025-08-26T10:50:44.634158+08:00"
+    created: "2025-08-28T10:21:17.72805+08:00"
     description: A Helm chart for ALTCHA Sentinel
     digest: 907c449a67eb8ebfd06d8984f97aa3f69d3e46e5913476e6de9219556a1850ea
     name: sentinel
@@ -12,7 +21,7 @@ entries:
     version: 0.10.1
   - apiVersion: v2
     appVersion: 1.10.0
-    created: "2025-08-26T10:50:44.633829+08:00"
+    created: "2025-08-28T10:21:17.727609+08:00"
     description: A Helm chart for ALTCHA Sentinel
     digest: 34a19fef33eb7a4c812e1385dcd551a35f8a8c589bafdc8cc0e013ed2fee9111
     name: sentinel
@@ -21,7 +30,7 @@ entries:
     version: 0.10.0
   - apiVersion: v2
     appVersion: 1.9.1
-    created: "2025-08-26T10:50:44.639219+08:00"
+    created: "2025-08-28T10:21:17.732878+08:00"
     description: A Helm chart for ALTCHA Sentinel
     digest: 189d516961ad9e54f2afed07dc3d53a7b30f9d86bd560546c3b57046229f8cf3
     name: sentinel
@@ -30,7 +39,7 @@ entries:
     version: 0.9.1
   - apiVersion: v2
     appVersion: 1.9.0
-    created: "2025-08-26T10:50:44.63857+08:00"
+    created: "2025-08-28T10:21:17.732538+08:00"
     description: A Helm chart for ALTCHA Sentinel
     digest: da1d5a0c9fc143320aa52f2bd99e1906d7242c78e0f4fcd16ce34b45e3a8373f
     name: sentinel
@@ -39,7 +48,7 @@ entries:
     version: 0.9.0
   - apiVersion: v2
     appVersion: 1.8.2
-    created: "2025-08-26T10:50:44.638163+08:00"
+    created: "2025-08-28T10:21:17.732141+08:00"
     description: A Helm chart for ALTCHA Sentinel
     digest: edb4ea3079136d1ce8d2de935924b3dd235a5ce68de08d9791afbe9fa19c89b1
     name: sentinel
@@ -48,7 +57,7 @@ entries:
     version: 0.8.3
   - apiVersion: v2
     appVersion: 1.8.2
-    created: "2025-08-26T10:50:44.637741+08:00"
+    created: "2025-08-28T10:21:17.731708+08:00"
     description: A Helm chart for ALTCHA Sentinel
     digest: 44476cd901d31aa8a3eb2e886b0dbccf6775596a4b508b17434710c00fbf5f6a
     name: sentinel
@@ -57,7 +66,7 @@ entries:
     version: 0.8.1
   - apiVersion: v2
     appVersion: 1.8.1
-    created: "2025-08-26T10:50:44.637359+08:00"
+    created: "2025-08-28T10:21:17.73133+08:00"
     description: A Helm chart for ALTCHA Sentinel
     digest: 5a6f99a12be2942c24c7961f9da8ae90bfd71a760e20f8b11c819bfebcd16256
     name: sentinel
@@ -66,7 +75,7 @@ entries:
     version: 0.8.0
   - apiVersion: v2
     appVersion: 1.7.0
-    created: "2025-08-26T10:50:44.636949+08:00"
+    created: "2025-08-28T10:21:17.730924+08:00"
     description: A Helm chart for ALTCHA Sentinel
     digest: 8fc283dbbce83dd02520232027dc4f0919c86dd784a8f1fc678c347108c6fa30
     name: sentinel
@@ -75,7 +84,7 @@ entries:
     version: 0.7.0
   - apiVersion: v2
     appVersion: 1.6.0
-    created: "2025-08-26T10:50:44.636425+08:00"
+    created: "2025-08-28T10:21:17.730484+08:00"
     description: A Helm chart for ALTCHA Sentinel
     digest: d62502f7822803eba0111aed8d8ab6752c1cd58b28569d38d7f3d3588f11c4b9
     name: sentinel
@@ -84,7 +93,7 @@ entries:
     version: 0.6.0
   - apiVersion: v2
     appVersion: 1.5.0
-    created: "2025-08-26T10:50:44.63594+08:00"
+    created: "2025-08-28T10:21:17.730004+08:00"
     description: A Helm chart for ALTCHA Sentinel
     digest: 40672cc435328ca770d1aea1c25b9100cae2a69b1bf30f08061569bf1da390f2
     name: sentinel
@@ -93,7 +102,7 @@ entries:
     version: 0.5.0
   - apiVersion: v2
     appVersion: 1.4.0
-    created: "2025-08-26T10:50:44.635513+08:00"
+    created: "2025-08-28T10:21:17.729633+08:00"
     description: A Helm chart for ALTCHA Sentinel
     digest: 0adb28b1394999dd6f459709faebddf2fe7c03e1467a69f733b9410f1064b879
     name: sentinel
@@ -102,7 +111,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 1.3.0
-    created: "2025-08-26T10:50:44.635054+08:00"
+    created: "2025-08-28T10:21:17.729145+08:00"
     description: A Helm chart for ALTCHA Sentinel
     digest: c4d868e508a3c1e59e5b72ea6e6067ef0cd9eff5ad7fb9d78a70c2cf012aa647
     name: sentinel
@@ -111,7 +120,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.2.0
-    created: "2025-08-26T10:50:44.634596+08:00"
+    created: "2025-08-28T10:21:17.728744+08:00"
     description: A Helm chart for ALTCHA Sentinel
     digest: b1c72682872b0503ea6d5e9dfbd8a261de5ab958574a77dabd637b26195acd08
     name: sentinel
@@ -120,11 +129,11 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.1.0
-    created: "2025-08-26T10:50:44.633201+08:00"
+    created: "2025-08-28T10:21:17.727061+08:00"
     description: A Helm chart for ALTCHA Sentinel
     digest: 3630076c94376669de043042e5dfa046bf76b6974b4ba2a73235768c5bf026da
     name: sentinel
     urls:
     - https://altcha-org.github.io/helm-charts/sentinel-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-26T10:50:44.632222+08:00"
+generated: "2025-08-28T10:21:17.726034+08:00"

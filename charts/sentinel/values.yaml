@@ -39,15 +39,14 @@ podAnnotations: {}
 podLabels: {}
 
 podSecurityContext: {}
-  # fsGroup: 2000
+  # fsGroup: 1001  # sentinel GID — lets Kubernetes handle /data ownership on mount
 
+# NOTE: Do not set runAsUser or runAsNonRoot here.
+# The image starts as root to fix /data permissions, then drops to uid 1001 (sentinel) via su-exec.
 securityContext: {}
   # capabilities:
   #   drop:
   #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
 
 # This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
 service:
